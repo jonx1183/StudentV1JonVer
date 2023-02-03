@@ -33,5 +33,5 @@ public class StudentRestContoller {
         return studentRepository.findAll();
     }
 
-
 }
+
