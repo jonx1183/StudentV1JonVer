@@ -17,7 +17,7 @@ class StudentTest {
 
     @Test
     void testViggo() {
-        Optional<Student> std = studentRepository.findById(10);
+        Optional<Student> std = studentRepository.findById(1);
         if (std.isPresent()) {
             Student s1 = std.get();
             assertEquals(1, s1.getId());
@@ -34,6 +34,11 @@ class StudentTest {
     @Test
     void testStudentByName() {
         assertEquals("Viggo", studentRepository.findByName("Viggo").orElse(new Student("xxx")).getName());
+    }
+
+    @Test
+    void testStudentByNameExist() {
+        assertEquals(true, studentRepository.findByName("Viggo").isPresent());
     }
 
 
