@@ -33,7 +33,7 @@ class StudentTest {
 
     @Test
     void testStudentByName() {
-        assertEquals("Viggo", studentRepository.findByName("Viggo").orElse(new Student()).getName());
+        assertEquals("Viggo", studentRepository.findByName("Viggo").orElse(new Student("xxx")).getName());
     }
 
 
