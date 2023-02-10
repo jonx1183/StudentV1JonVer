@@ -18,20 +18,22 @@ public class InitData implements CommandLineRunner {
 
     @Override
     public void run(String... args) throws Exception {
-        Student s1 = new Student();
-        s1.setId(1);
-        s1.setName("Viggo");
-        s1.setBornDate(LocalDate.now());
-        s1.setBornTime(LocalTime.now());
-        studentRepository.save(s1);
-        System.out.println("saved");
-        List<Student> lst = studentRepository.findAll();
-        System.out.println("Antal studerende i database=" + lst.size());
-        s1.setId(2);
-        s1.setName("Viggox");
-        studentRepository.save(s1);
-        System.out.println("saved");
-        lst = studentRepository.findAll();
-        System.out.println("Antal studerende i database=" + lst.size());
+        if (3>4) {
+            Student s1 = new Student();
+            s1.setId(1);
+            s1.setName("Viggo");
+            s1.setBornDate(LocalDate.now());
+            s1.setBornTime(LocalTime.now());
+            studentRepository.save(s1);
+            System.out.println("saved");
+            List<Student> lst = studentRepository.findAll();
+            System.out.println("Antal studerende i database=" + lst.size());
+            s1.setId(2);
+            s1.setName("Viggox");
+            studentRepository.save(s1);
+            System.out.println("saved");
+            lst = studentRepository.findAll();
+            System.out.println("Antal studerende i database=" + lst.size());
+        }
     }
 }
