@@ -58,6 +58,12 @@ public class StudRESTController {
         return studentRepository.save(student);
     }
 
+    @DeleteMapping("/student/{id}")
+    public ResponseEntity<Student> deleteStudent(@PathVariable Integer id) {
+        studentRepository.deleteById(id);
+        return new ResponseEntity<>(HttpStatus.OK);
+
+    }
 
 
 }
